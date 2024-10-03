@@ -8,8 +8,8 @@ practice_function <- function(filepath, clmns){
   if(is.numeric(dataframe)){
     ##clmns references weight variable instead of dataframe index.
     message(clmns)
-    squared = dataframe * dataframe
-    return(squared)
+    sqrd = dataframe * dataframe
+    return(sqrd)
   }else{
     print("Input non-numeric")
   }
