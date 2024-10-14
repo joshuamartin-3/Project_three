@@ -1,0 +1,9 @@
+record_id labels the row number of each of the entries in the surveys dataset.
+month provides the month in which the sample was collected.
+day provides the day of the month in which the sample was collected.
+year provides the year in which the sample was collected.
+plot_id identifies the specific spot number in which the sample was collected.
+species_id is the species type for the collected sample.
+sex identifies whether the collected specimen was male or female.
+hindfoot_length identifies the length of the hindfoot of the collected specimen.
+weight identifies the weight of the specimen.
