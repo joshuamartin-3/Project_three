@@ -1,0 +1,205 @@
+---
+title: "Project Two"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+Due Oct. 25 at 11:59 PM. 
+
+For this first part of the exam, you can either use `surveys_complete.csv` or your own data. If you are using your own data, you must have data in which you think you have a numerical predictor variable and a numerical response variable. If you are using `surveys_complete`, you can use weight and hindfoot_length for this.
+
+Save this file in your `projects` directory. You can either save it in a project two subdirectory, or just put it in projects. Either way is fine.
+
+
+1) Load in your data. Which variable will you be using as a predictor, and which as a response? (5 pts)
+
+```{r}
+surveys_complete <- read.csv("/cloud/project/projects/surveys_complete.csv")
+```
+
+```
+#Comparing weight and hindfoot_length in the surveys_complete dataset will use weight as the predictor and hindfoot_length as the response.
+
+```
+
+2) Plot the two against each other with a scatter plot. Do the data appear to be related linearly? (5 pts)
+
+
+```{r}
+library(ggplot2)
+surveys_plot <- ggplot(surveys_complete, aes(x = weight, y = hindfoot_length)) + geom_point()
+surveys_plot
+```
+
+```
+#Visually the plot does not look to be linear. Initially, the points seem to increase with an increase in weight until around where weight equals 50, but then the points seem to plateau after with not much if any increase in hindfoot_length.
+```
+
+
+3) Fit the linear model. View the summary. (5 pts)
+
+
+```{r}
+survey_model <- lm(hindfoot_length ~ weight, data = surveys_complete)
+summary(survey_model)
+
+```
+
+4) Does the summary make sense when you compare it to the plot you made? Does our model have good predictive power? Evaluate the residual standard error, intercept, and R-Squared in particular. Would you say your predictor predicts the response?  (10 pts)
+
+
+```
+#The model does not seem to have great predictive power the R-squared values indicates that our predictor is not heavily influential upon the response, and the residual standard error seems to portray a bad-fitting model.
+
+
+#Residual standard error: 6.963
+#Residual standard error starting to be on the bigger side indicating that the model fit may not be properly representative of the dataset.
+
+#Intercept: 21.562162
+#I would not expect that for a sample weight of 0 there would be a hindfoot_length of 21.56. This would not make sense as the organism would not exist. 
+
+#Rsquared: 0.4676
+#Indicative that 46.76% of the variation in hindfoot_length can be explained by weight.This also indicates that there is 53.24% of the varaition is unexplained by the model.
+
+```
+
+
+5) Plot the model on the graph. Increase the size of the text so it is comfortably readable at 5 feet. Make sure axis labels are readable and not overlapping with one another. (5 pts)
+
+```{r}
+surveys_plot <- ggplot(surveys_complete, aes(x = weight, y = hindfoot_length)) + geom_point() + geom_jitter() + labs(x = "Weight", y = "Hindfoot Length") + geom_smooth(method = "lm", color = "red", fill = "deeppink4") + theme(axis.title.x = element_text(size = 20), axis.title.y = element_text(size = 20)  , axis.text.x = element_text(size = 20), axis.text.y = element_text(size = 20))
+
+surveys_plot
+```
+
+
+
+6) Check the normality of the residuals. Do they look OK? Are we violating assumptions? (5 pts)
+
+```{r}
+
+model_fit <- lm(hindfoot_length ~ weight, data = surveys_complete)
+broom::augment(model_fit) -> augment_fit
+
+qqnorm(augment_fit$.resid)
+qqline(augment_fit$.resid, col = "red")
+
+#The Q-Q plot showed quite residuals that seemed loosely bound to the red line, and visually it looked like there was more negative residuals than positive. From these visual interpretations of the graphical analysis of the residuals there is evidence supporting a lack of normality for the distribution. 
+
+#If we choose to trust the summary of the model we have thus far it would not be accurate due to having a non-normal distribution. 
+
+
+
+```
+
+Why is normality of residuals important? 
+
+```{r}
+#If the distribution lacks normality of residuals we are not allowed to make trustworthy inferences and predictions about the linear model with statistical significance. With non-normal residuals we have a likelihood that the data could be subject to bias.
+```
+
+7) If you are using `surveys_complete`: Is there interspecific variation in the linear model? Hint: look at our prior work with facet plots. (15 pts) 
+
+If you are *not* using  `surveys_complete`: Do you think there are groupings within your data that may have a separate linear model? Try grouping the data by that variable and redoing the lm. If this would not make sense for your data, you may also attempt to do multiple predictor variables. (15 pts)
+
+```{r}
+species_plot <- ggplot(surveys_complete, aes(x = weight, y = hindfoot_length)) + geom_point() + geom_jitter() + labs(x = "Weight", y = "Hindfoot Length") + geom_smooth(method = "lm", color = "red", fill = "deeppink4") + theme(axis.title.x = element_text(size = 20), axis.title.y = element_text(size = 20)) + facet_wrap(facets = vars(species_id))
+
+species_plot
+
+#Based on the output of the code above there is evidence to support interspecific variation in the linear model due to the differences among the separate models, and this also made it seem like there was a fairly weak relationship between the species.
+```
+
+## Part Two
+
+In this portion, you are free to use your own data if you have a categorical predictor variable and a response variable. Otherwise, you may use the columns sex and weight in `surveys_complete`
+
+1) First, plot the data grouped by sex (5 pts)
+
+```{r}
+surveys_sex_grouped <- surveys_complete %>%
+  group_by(sex) %>% 
+  filter(sex == 'M' | sex == 'F')
+
+sex_grouped_surveys <- ggplot(surveys_sex_grouped, aes(x = sex, y = weight)) + geom_point() + geom_jitter() + labs(x = "Sex", y = "Weight") + theme(axis.title.x = element_text(size = 20), axis.title.y = element_text(size = 20))
+ 
+sex_grouped_surveys
+  
+```
+
+2) Try an ANOVA of this data (5 pt)
+
+```{r}
+model_fit <- lm(weight ~ sex, data = surveys_sex_grouped)
+anova_by_sex <- aov(model_fit)
+summary(anova_by_sex)
+```
+
+3) How about a linear model? What information does this give you that an ANOVA can't? (5 pts)
+
+
+```{r}
+model_fit <- lm(weight ~ sex, data = surveys_sex_grouped)
+summary(model_fit)
+
+```
+
+```
+#By running an ANOVA test we are testing the p-value we get against our alpha value to see if the means between the two categorical groups are statistically different or not, but there is no indication of what the average weight difference is between the two sexes. In this case the p-value is higher than our alpha (0.05) indicating there is no statistically significant difference between the mean values of both sexes.
+
+#With the linear model we get more detailed data for the plot. In this case, the intercept is the expected weight at the baseline level for females. For males the data table showed an average of 0.6124 higher than the females, but the p-value was not statistically significant for the male intercept (0.133) or the adjusted r-squared (0.1332). This indicates that there was no statistically significant difference in weights between sexes for our samples. Overall, what this means is that differences in sex are not explanatory of weight variation in the dataset.
+```
+
+3) Plot the lm with the data, with points colored by sex. (10 pts)
+
+
+```{r}
+sex_grouped_surveys <- ggplot(surveys_sex_grouped, aes(x = sex, y = weight, color = sex)) + geom_point() + geom_jitter() + geom_smooth(method = "lm", color = "black", fill = "deeppink4") +  labs(x = "Sex", y = "Weight") + theme(axis.title.x = element_text(size = 20), axis.title.y = element_text(size = 20)) +  stat_summary(fun.data = "mean_se", color = "black")
+
+sex_grouped_surveys
+```
+
+4) Choose any model we've looked at so far, but use two predictor variables. Perform an LM, plot the results, and state if this changes your interpretation of the relationship between variables (10 pts)
+
+```{r}
+surveys_two_sex <- surveys_complete %>%
+  filter(sex == 'M' | sex == 'F')
+
+model_fit <- lm(hindfoot_length ~ sex + weight, data = surveys_two_sex)
+summary(model_fit)
+```
+
+```{r}
+two_predictor <- ggplot(surveys_two_sex, aes(x = weight, y = hindfoot_length, color = sex)) + geom_point() + labs(x = "Weight", y = "Hindfoot Length", color = "Sex") + geom_smooth(method = "lm") + annotate("text", x = 30, y = 75, label = "R^2 == 0.469", parse=T, size=5)
+
+two_predictor
+
+```
+
+```
+Based on the linear model and the plot it seems that when I added two predictor variables (sex and weight) it changed the statistical relationship to the response variable. Based on the low p-values for the intercept("female" sex), male sex, and weight we can infer that there is a statistically significant relationship between sex and weight on hindfoot_length. Additionally, based on the low p-value for the adjusted r-squared we can attribute approximately 46.9% of the variation in hindfoot_length to weight and sex. 
+
+As far as the accuracy of these predictions we would have to ensure that our statistical assumptions are met first. With a non-normal dataset we cannot be sure that the findings from the linear model are unbiased. 
+```
+
+## Part Three
+
+
+1) Add and commit this document (5 pts)
+
+```
+#Commands here
+```
+
+2) Push your changes to github (10 pts)
+
+```
+#Commands here
+```
+
+
+
+# MS students
+
+My expectation is that you'll do the above with your own data. If any part of this doesn't make sense with your data, please get in touch ASAP so we can pick a different classroom dataset for you.
