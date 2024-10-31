@@ -1,0 +1,19 @@
+---
+title: "Specified Column Squared"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Specified Column Squared}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(surveysquared)
+```
