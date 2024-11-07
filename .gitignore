@@ -3,3 +3,10 @@
 .RData
 .Ruserdata
 /project.Rproj
+project.Rcheck/
+project*.tar.gz
+project*.tgz
+inst/doc
+surveysquared.Rcheck/
+surveysquared*.tar.gz
+surveysquared*.tgz
