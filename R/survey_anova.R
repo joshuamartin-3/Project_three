@@ -12,7 +12,7 @@ survey_anova <- function(filepath, predictor, response){
 
   survey_model <- stats::lm({{response}} ~ {{predictor}}, data = surveys)
 
-  anova_surveys <- aov(survey_model)
+  anova_surveys <- stats::aov(survey_model)
   summary(anova_surveys)
 
 
