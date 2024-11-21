@@ -15,19 +15,19 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(surveys.analysis)
+library(AnalyzeSurveys)
 ```
 
 ##Installion Instructions
 
-devtools::install_github("joshua.martin-3/Project_three/squared_surveys")
-library(squared_surveys)
++devtools::install_github("joshua.martin-3/Project_three/squared_surveys")
++library(squared_surveys)
 
 ##Introducing the squared_surveys R package.
 
-This package was made in order to square the values in a specified column and create a new column of values.
++This package was made in order to square the values in a specified column and create a new column of values.
 
 ##Where to get the data
 
-Can use google sheets and give people instructions for that
-Can stash data in an R package
++Can use google sheets and give people instructions for that
++Can stash data in an R package

@@ -10,3 +10,6 @@ inst/doc
 surveysquared.Rcheck/
 surveysquared*.tar.gz
 surveysquared*.tgz
+AnalyzeSurveys.Rcheck/
+AnalyzeSurveys*.tar.gz
+AnalyzeSurveys*.tgz
