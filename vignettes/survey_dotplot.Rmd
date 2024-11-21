@@ -1,8 +1,8 @@
 ---
-title: "Specified Column Squared"
+title: "Scatterplot Comparison of Two Surveys Columns"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Specified Column Squared}
+  %\VignetteIndexEntry{Scatterplot Comparison of Two Surveys Columns}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,5 +15,5 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(surveysquared)
+library(surveys.analysis)
 ```

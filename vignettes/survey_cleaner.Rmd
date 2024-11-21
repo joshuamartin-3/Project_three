@@ -1,0 +1,19 @@
+---
+title: "Ensuring Dataset Install and NA Removal"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Ensuring Dataset Install and NA Removal}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(surveys.analysis)
+```

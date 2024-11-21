@@ -1,4 +1,4 @@
-Package: surveys_analysis
+Package: surveys.analysis
 Title: Reads in surveys and provides various functions to alter and analyze specified data columns.
 Version: 0.0.0.9000
 Authors@R: 

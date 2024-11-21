@@ -1,0 +1,33 @@
+---
+title: "Specified Column Squared"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Specified Column Squared}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(surveys.analysis)
+```
+
+##Installion Instructions
+
+devtools::install_github("joshua.martin-3/Project_three/squared_surveys")
+library(squared_surveys)
+
+##Introducing the squared_surveys R package.
+
+This package was made in order to square the values in a specified column and create a new column of values.
+
+##Where to get the data
+
+Can use google sheets and give people instructions for that
+Can stash data in an R package
