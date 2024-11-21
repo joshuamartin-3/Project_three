@@ -6,6 +6,7 @@
 #' @return sqrd the original dataset with a new column of squared values.
 #' @export
 squared_surveys <- function(filepath, clmns){
+
   dataframe <- readr::read_csv(filepath)
 
   dataframe <- dataframe %>%
