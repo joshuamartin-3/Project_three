@@ -1,5 +1,5 @@
-Package: surveysquared
-Title: Reads in surveys and squares numerical column specified.
+Package: surveys_analysis
+Title: Reads in surveys and provides various functions to alter and analyze specified data columns.
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Joshua", family = "Martin", email = "joshua.martin-3@selu.edu", role = c("aut", "cre"))
@@ -7,7 +7,10 @@ Description: What the package does (one paragraph).
 Imports: 
     dplyr,
     magrittr,
-    readr
+    readr,
+    stats,
+    ggplot2,
+    utils
 License: MIT
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

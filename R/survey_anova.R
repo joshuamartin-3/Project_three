@@ -1,4 +1,4 @@
-#Takes in the surveys dataset from a given filepath and performs an ANOVA analysis of the data for two given column types.
+#'Takes in the surveys dataset from a given filepath and performs an ANOVA analysis of the data for two given column types.
 #'
 #' @param filepath The path to the csv file you want to process
 #' @param predictor The predictor variable from the csv filepath inputted
