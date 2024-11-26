@@ -21,7 +21,7 @@ library(AnalyzeSurveys)
 
 ##Installion Instructions
 
-devtools::install_github("joshua.martin-3/Project_three/AnalyzeSurveys")
+devtools::install_github("joshua.martin-3/Project_three")
 library(AnalyzeSurveys)
 
 ##Introducing the squared_surveys R function.
