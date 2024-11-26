@@ -14,6 +14,11 @@ squared_surveys <- function(filepath, clmns){
     stats::na.omit(dataframe) %>%
     dplyr::pull({{clmns}})
 
+  #Error check if the specified column contains NA values.
+  if(is.na({{clmns}})){
+    message("NA values still in surveys dataset!")
+  }
+
   if(is.numeric(dataframe)){
     ##clmns references weight variable instead of dataframe index.
     message(clmns)

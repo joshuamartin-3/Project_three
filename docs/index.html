@@ -79,7 +79,51 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-What the package does (one paragraph).
+<div class="section level1">
+<div class="page-header"><h1 id="analyzesurveys">AnalyzeSurveys<a class="anchor" aria-label="anchor" href="#analyzesurveys"></a>
+</h1></div>
+<div class="section level2">
+<h2 id="a-package-containing-functions-to-import-clean-manipulate-model-and-plot-the-surveys-dataset">A package containing functions to import, clean, manipulate, model, and plot the surveys dataset.<a class="anchor" aria-label="anchor" href="#a-package-containing-functions-to-import-clean-manipulate-model-and-plot-the-surveys-dataset"></a>
+</h2>
+<div class="section level3">
+<h3 id="author-joshua-martin">Author: Joshua Martin<a class="anchor" aria-label="anchor" href="#author-joshua-martin"></a>
+</h3>
+</div>
+</div>
+<div class="section level2">
+<h2 id="why-use-this-package">Why use this package?<a class="anchor" aria-label="anchor" href="#why-use-this-package"></a>
+</h2>
+<p>The AnalyzeSurveys package was created to automate commonly used dataframe manipulations within the original surveys dataset. Creating pre-existing functions used when working with this dataset are useful in saving working time when standard design templates can be utilized across multiple dataframe column types.</p>
+</div>
+<div class="section level2">
+<h2 id="installation-instructions">Installation Instructions<a class="anchor" aria-label="anchor" href="#installation-instructions"></a>
+</h2>
+<pre><code><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"joshuamartin-3/Project_three"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">AnalyzeSurveys</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="what-can-i-do-with-analyzesurveys">What can I do with AnalyzeSurveys?<a class="anchor" aria-label="anchor" href="#what-can-i-do-with-analyzesurveys"></a>
+</h2>
+<p>The survey_cleaner function should be the first function ran after installation.</p>
+<pre><code><span><span class="fu">AnalyzeSurveys</span><span class="fu">::</span><span class="fu"><a href="reference/survey_cleaner.html">survey_cleaner</a></span><span class="op">(</span><span class="st">"/cloud/project/data/surveys.csv"</span><span class="op">)</span></span></code></pre>
+<p>Running this segment of code in the console will ensure that the surveys.csv dataset is within the specified data directory within the Posit cloud. If the dataset does not exist it will download it to the specified directory. Lastly, the function will remove common NA values from the dataset: NA, ““, and”Not Recorded” and return a cleaned surveys dataset.</p>
+<p>After this step is completed any other function within the package can be used to manipulate, analyze, or plot the cleaned dataset.</p>
+<p>For example we can use survey_dotplot to create a scatterplot comparing two column types.</p>
+<pre><code><span><span class="fu">AnalyzeSurveys</span><span class="fu">::</span><span class="fu"><a href="reference/survey_dotplot.html">survey_dotplot</a></span><span class="op">(</span><span class="st">"/cloud/project/data/surveys.csv"</span>, <span class="st">"weight"</span>, <span class="st">"hindfoot_length"</span>, <span class="st">"Weight"</span>, <span class="st">"Hindfoot Length"</span><span class="op">)</span></span></code></pre>
+<p>The input parameters are the filepath of surveys.csv, the x-variable, y-variable, x-axis title, and y-axis title. Once this segment of code is ran a pre-existing template within the function will be utilized as the basis of creating a scatterplot to compare the two variable columns. Lastly, the function will return the scatterplot created.</p>
+</div>
+<div class="section level2">
+<h2 id="functions-within-the-package">Functions within the package<a class="anchor" aria-label="anchor" href="#functions-within-the-package"></a>
+</h2>
+<ul>
+<li><p>survey_cleaner ensures the surveys.csv dataset is in the proper directory(“cloud/project/data/surveys.csv”) and cleans it of common NA values.</p></li>
+<li><p>survey_dotplot cleans and creates a scatterplot comparing two user-specified variables</p></li>
+<li><p>squared_surveys omits NA values and squares the value of the user-specified column</p></li>
+<li><p>survey_lm creates a linear model of comparing a user-specified predictor and response variable and saves a graphical representation of the model for use in error-checking</p></li>
+<li><p>survey_anova creates a linear model, fits an ANOVA model, and saves a graphical representation of the model for error checking purposes.</p></li>
+</ul>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
