@@ -4,7 +4,7 @@
 \alias{survey_anova}
 \title{Takes in the surveys dataset from a given filepath and performs an ANOVA analysis of the data for two given column types.}
 \usage{
-survey_anova(filepath, predictor, response)
+survey_anova(filepath, predictor, response, x_title, y_title)
 }
 \arguments{
 \item{filepath}{The path to the csv file you want to process}

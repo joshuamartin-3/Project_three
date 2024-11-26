@@ -4,7 +4,7 @@
 \alias{survey_lm}
 \title{Takes in the surveys dataset, cleans the data, and performs a linear model analysis and plot for specified columns.}
 \usage{
-survey_lm(filepath, predictor, response)
+survey_lm(filepath, predictor, response, x_title, y_title)
 }
 \arguments{
 \item{filepath}{The path to the csv file you want to process}
@@ -12,6 +12,10 @@ survey_lm(filepath, predictor, response)
 \item{predictor}{The predictor variable from the csv filepath inputted}
 
 \item{response}{The response variable from the csv filepath inputted}
+
+\item{x_title}{User-specified title for x-axis of plot}
+
+\item{y_title}{User-specified title for y-axis of plot}
 }
 \value{
 survey_plot Returns a scatterplot of detailing the linear model predicting change in the response variable based on a change in the predictor

@@ -4,7 +4,7 @@
 \alias{survey_dotplot}
 \title{Takes in the surveys dataset, cleans the data, and then creates a scatterplot comparing two specified columns in the dataset.}
 \usage{
-survey_dotplot(filepath, x_var, y_var)
+survey_dotplot(filepath, x_var, y_var, x_title, y_title)
 }
 \arguments{
 \item{filepath}{The path to the csv file you want to process}
@@ -12,6 +12,10 @@ survey_dotplot(filepath, x_var, y_var)
 \item{x_var}{the independent varaible infuencing the y-axis variable}
 
 \item{y_var}{the dependent variable varying in response to the x-axis variable}
+
+\item{x_title}{User-specified title for x-axis of plot}
+
+\item{y_title}{User-specified title for y-axis of plot}
 }
 \value{
 survey_plot the scatterplot using the surveys dataset comparing two variables x_var and y_var, grouping the two variables by color_group
