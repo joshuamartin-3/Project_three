@@ -91,27 +91,36 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">AnalyzeSurveys</span><span class="op">)</span></span></code></pre></div>
-<p>##Installation Instructions</p>
-<p>devtools::install_github(“joshuamartin-3/Project_three”)
-library(AnalyzeSurveys)</p>
-<p>##Introducing the survey_cleaner R function.</p>
+<div class="section level2">
+<h2 id="installation-instructions">Installation Instructions<a class="anchor" aria-label="anchor" href="#installation-instructions"></a>
+</h2>
+<pre><code><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"joshuamartin-3/Project_three"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">AnalyzeSurveys</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="introducing-the-survey_cleaner-r-function-">Introducing the survey_cleaner R function.<a class="anchor" aria-label="anchor" href="#introducing-the-survey_cleaner-r-function-"></a>
+</h2>
 <p>This function was created in order to ensure that the surveys.csv
 dataset is located in the proper directory on the local machine. The
 secondary usage of this function is to ensure that the common types of
 NA values located within the dataset are removed providing a “clean”
 dataset for usage.</p>
-<p>##Usage of the function to download the surveys dataset.</p>
+</div>
+<div class="section level2">
+<h2 id="usage-of-the-function-to-download-the-surveys-dataset-">Usage of the function to download the surveys dataset.<a class="anchor" aria-label="anchor" href="#usage-of-the-function-to-download-the-surveys-dataset-"></a>
+</h2>
 <p>The data utilized in this package is located within the surveys.csv
 dataset.</p>
 <p>This can be downloaded directly to the directory
 “/cloud/project/data/surveys.csv” using the code displayed below.</p>
-<p>AnalyzeSurveys::survey_cleaner(“/cloud/project/data/surveys.csv”)</p>
+<pre><code><span><span class="fu">AnalyzeSurveys</span><span class="fu">::</span><span class="fu"><a href="../reference/survey_cleaner.html">survey_cleaner</a></span><span class="op">(</span><span class="st">"/cloud/project/data/surveys.csv"</span><span class="op">)</span></span></code></pre>
 <p>The code displayed above checks for the presence of the proper file
 in the specified filepath. If it is not there it will then download the
 file to the specified location. The function read_csv was used in order
 to save the csv file to a variable name and specify commmon NA values.
 Lastly, the NA values were removed from the dataset and a “clean”
 version of the surveys dataset was returned from the function.</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

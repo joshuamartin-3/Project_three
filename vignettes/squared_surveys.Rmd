@@ -19,29 +19,36 @@ knitr::opts_chunk$set(
 library(AnalyzeSurveys)
 ```
 
-##Installation Instructions
+## Installation Instructions
 
+```
 devtools::install_github("joshuamartin-3/Project_three")
 library(AnalyzeSurveys)
+```
 
-##Introducing the squared_surveys R function.
+## Introducing the squared_surveys R function.
 
 This package was made in order to square the values in a specified column and create a new column of values. This may be useful if we want to use the squared value of a column in further calculations perhaps in statistical measurement.
 
-##Where to get the data.
+## Where to get the data.
 
 The data utilized in this package is located within the surveys.csv dataset.
 
 This can be downloaded directly to the directory "/cloud/project/data/surveys.csv" using the code displayed below.
 
+```
 AnalyzeSurveys::survey_cleaner("/cloud/project/data/surveys.csv")
+```
 
-##Usage of the squared_surveys function.
+## Usage of the squared_surveys function.
 
 This function takes in two parameters: 
-filepath the filepath of the surveys.csv dataset
-clmns which is the specified column to be manipulated and squared
 
++ filepath the filepath of the surveys.csv dataset
++ clmns which is the specified column to be manipulated and squared
+
+```
 AnalyzeSurveys::squared_surveys("/cloud/project/data/surveys.csv", "weight")
+```
 
 The dataset will return the squared values of the original column or if there is not a numerical column inputted it will provide the error message: "Input non-numeric."
