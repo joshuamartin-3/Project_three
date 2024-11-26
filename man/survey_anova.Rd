@@ -17,5 +17,11 @@ survey_anova(filepath, predictor, response, x_title, y_title)
 anova_plot Returns a scatterplot of the anova model predicting change in the response variable based on a change in the predictor
 }
 \description{
-Takes in the surveys dataset from a given filepath and performs an ANOVA analysis of the data for two given column types.
+The surveys dataseet is installed and cleaned utilizing the survey_cleaner function.
+Then the values of the predictor variable are extracted to the variable predict.
+Also, the values of the response variable are extracted to the variable respond.
+A linear model is fit for the relationship of the response variable with changes to the predictor using the lm function saved to survey_model.
+An ANOVA model is fit to the pre-existing model using the aov function saved to anova_surveys.
+A scatterplot of the linear relationship would created and saved under anova_plot.png to check for proper data input.
+The function lastly returns a summary of the ANOVA test to get the relevant values from the statistical analysis.
 }

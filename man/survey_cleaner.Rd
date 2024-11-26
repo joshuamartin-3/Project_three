@@ -13,5 +13,9 @@ survey_cleaner(filepath)
 surveys the cleaned dataset with no values labeled NA, "Not Recorded", or an empty space.
 }
 \description{
-Takes in the surveys dataset filepath, checks if the file is not downloaded it downloads, and then rids the data of any type of non-applicable values returning the altered csv dataset.
+The function takes in a filepath where surveys.csv will be stored.
+It checks to ensure that the surveys.csv file exists within "/cloud/project/data/surveys.csv".
+If the file is not available the file is downloaded from the source url.
+The function read_csv was used to read the surveys dataset into the variable surveys specifying common types of NA.
+The NA values are then ommitted using na.omit from the dataset and the function returns the dataset "cleaned" of any NA values.
 }

@@ -1,5 +1,11 @@
 #' Takes in a csv database and squares the values of a numeric column specified
 #'
+#' The squared_surveys function takes in a filepath and a column name as parameters.
+#' Next, the function reads the surveys dataset into the variable dataframe, and from this point NA values are removed and the relevant columns is isolated with the pull function.
+#' Next, there is an error check to ensure no NA values remain and then the isolated values are multiplied by themselves to get squares.
+#' Then an error check to determine if the dataframe is non-numeric occurs in order to avoid potential errors, and in one is used a message will appear: "Input non-numeric."
+#' Lastly, the function returns the squared values with a message for checking the data modification occurred.
+#'
 #' @param filepath The path to the csv file you want to process
 #' @param clmns The column of values you wish to get squared values for
 #'

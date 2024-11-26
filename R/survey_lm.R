@@ -1,5 +1,12 @@
 #'Takes in the surveys dataset, cleans the data, and performs a linear model analysis and plot for specified columns.
 #'
+#' The surveys dataset is installed and cleaned utilizing the survey_cleaner function.
+#' Then the values of the predictor variable are extracted to the variable predict.
+#' Also, the values of the response variable are extracted to the variable respond.
+#' A linear model is fit for the relationship of the response variable with changes to the predictor using the lm function saved to survey_model.
+#' A scatterplot of the linear relationship would created and saved under surveys_lm_plot.png to check for proper data input.
+#' The function lastly returns a summary of the linear model test to get the relevant values from the statistical analysis.
+#'
 #' @param filepath The path to the csv file you want to process
 #' @param predictor The predictor variable from the csv filepath inputted
 #' @param response The response variable from the csv filepath inputted
