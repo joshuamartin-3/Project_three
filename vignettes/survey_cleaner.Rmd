@@ -21,7 +21,7 @@ library(AnalyzeSurveys)
 
 ##Installion Instructions
 
-devtools::install_github("joshua.martin-3/Project_three")
+devtools::install_github("joshuamartin-3/Project_three")
 library(AnalyzeSurveys)
 
 ##Introducing the survey_cleaner R function.
