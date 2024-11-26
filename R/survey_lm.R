@@ -30,7 +30,7 @@ survey_lm <- function(filepath, predictor, response, x_title, y_title){
   surveys_plot <- ggplot2::ggplot(surveys, aes_string(x = {{predict}}, y = {{respond}})) + geom_point() + geom_jitter() + labs(x = x_title, y = y_title) + geom_smooth(method = "lm", color = "red", fill = "deeppink4") + theme(axis.title.x = element_text(size = 20), axis.title.y = element_text(size = 20)  , axis.text.x = element_text(size = 20), axis.text.y = element_text(size = 20)) + annotate("text", x = 50, y = 90, label = paste("R^2 == ", summary(survey_model)$r.squared), parse=T, size=5)
 
   #Save the plot created to "surveys_lm_plot.png"
-  ggplot2::ggsave("surveys_lm_plot.png", surveys_plot)
+  ggplot2::ggsave("surveys_lm_plot.png", surveys_plot, width = 7, height = 7)
 
   return(summary(survey_model))
 

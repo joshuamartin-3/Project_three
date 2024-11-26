@@ -30,8 +30,8 @@ survey_anova <- function(filepath, predictor, response, x_title, y_title){
   #Create a scatterplot used to check and ensure the base linear model is correct.
   anova_plot <- ggplot2::ggplot(surveys, aes_string(x = {{predict}}, y = {{respond}})) + geom_point() + geom_jitter() + labs(x = x_title, y = y_title) + geom_smooth(method = "lm", color = "red", fill = "deeppink4") + theme(axis.title.x = element_text(size = 20), axis.title.y = element_text(size = 20)  , axis.text.x = element_text(size = 20), axis.text.y = element_text(size = 20)) + annotate("text", x = 50, y = 90, label = paste("R^2 == ", summary(survey_model)$r.squared), parse=T, size=5)
 
-  #Save the plot to the local machine as "anova_plot.png".
-  ggplot2::ggsave("anova_plot.png", anova_plot)
+  #Save the plot to the local machine under "anova_plot.png"
+  ggplot2::ggsave("anova_plot.png", anova_plot, width = 7, height = 7)
 
   return(summary(anova_surveys))
 }
