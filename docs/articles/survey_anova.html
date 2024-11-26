@@ -91,6 +91,35 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">AnalyzeSurveys</span><span class="op">)</span></span></code></pre></div>
+<p>##Installion Instructions</p>
+<p>devtools::install_github(“joshua.martin-3/Project_three/AnalyzeSurveys”)
+library(AnalyzeSurveys)</p>
+<p>##Introducing the survey_lm R function.</p>
+<p>This function was created in order to perform an ANOVA analysis of
+the relationship between two specified variable types. This function
+will return to the console a summary of the ANOVA test, and saved
+locally will be the graphical representation of the linear model.</p>
+<p>##Where to get the data.</p>
+<p>The data utilized in this package is located within the surveys.csv
+dataset.</p>
+<p>This can be downloaded directly to the directory
+“/cloud/project/data/surveys.csv” using the code displayed below.</p>
+<p>AnalyzeSurveys::survey_cleaner(“/cloud/project/data/surveys.csv”)</p>
+<p>##Sample Utilization of the survey_anova function</p>
+<p>There are five parameters used in this function:</p>
+<p>filepath the path to the surveys.csv dataset predictor the variable
+potentially impacting the reponse variable response the variable
+potentially changed by the predictor variable x_title the user-specified
+x-axis title y_title the user-specified y-axis title</p>
+<p>AnalyzeSurveys::survey_anova(“/cloud/project/data/surveys.csv”,
+“weight”, “hindfoot_length”, “Weight”, “Hindfoot Length”)</p>
+<p>The function will summarize the relationship of weight on
+hindfoot_length using a linear model, then the aov function was used to
+fit an analysis of variance model to the dataset. Next the function
+creates a graphical representation of the potential effect of weight on
+hindfoot_length as a scatterplot with the linear model trendline and
+r-squared. Lastly, the function will save the graph to a file named
+“anova_plot.png”.</p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

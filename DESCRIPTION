@@ -10,7 +10,8 @@ Imports:
     readr,
     stats,
     ggplot2,
-    utils
+    utils,
+    tidyselect
 License: MIT
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

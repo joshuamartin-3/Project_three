@@ -80,6 +80,8 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Specified Column Squared</h1>
+                        <h4 data-toc-skip class="author">Joshua
+Martin</h4>
             
       
 
@@ -92,14 +94,28 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">AnalyzeSurveys</span><span class="op">)</span></span></code></pre></div>
 <p>##Installion Instructions</p>
-<p>+devtools::install_github(“joshua.martin-3/Project_three/squared_surveys”)
-+library(squared_surveys)</p>
-<p>##Introducing the squared_surveys R package.</p>
-<p>+This package was made in order to square the values in a specified
-column and create a new column of values.</p>
-<p>##Where to get the data</p>
-<p>+Can use google sheets and give people instructions for that +Can
-stash data in an R package</p>
+<p>devtools::install_github(“joshua.martin-3/Project_three/AnalyzeSurveys”)
+library(AnalyzeSurveys)</p>
+<p>##Introducing the squared_surveys R function.</p>
+<p>This package was made in order to square the values in a specified
+column and create a new column of values. This may be useful if we want
+to use the squared value of a column in further calculations perhaps in
+statistical measurement.</p>
+<p>##Where to get the data.</p>
+<p>The data utilized in this package is located within the surveys.csv
+dataset.</p>
+<p>This can be downloaded directly to the directory
+“/cloud/project/data/surveys.csv” using the code displayed below.</p>
+<p>AnalyzeSurveys::survey_cleaner(“/cloud/project/data/surveys.csv”)</p>
+<p>##Usage of the squared_surveys function.</p>
+<p>This function takes in two parameters: filepath the filepath of the
+surveys.csv dataset clmns which is the specified column to be
+manipulated and squared</p>
+<p>AnalyzeSurveys::squared_surveys(“/cloud/project/data/surveys.csv”,
+“weight”)</p>
+<p>The dataset will return the squared values of the original column or
+if there is not a numerical column inputted it will provide the error
+message: “Input non-numeric.”</p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

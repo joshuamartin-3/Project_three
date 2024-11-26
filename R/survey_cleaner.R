@@ -14,6 +14,7 @@ survey_cleaner <- function(filepath){
   #read in the file from the local machine and alter the csv to get rid of various types of NA data.
   surveys <- readr::read_csv(filepath, na = c("Not Recorded", "NA", ""))
 
+  #Omit NA values from the dataset
   surveys <- surveys%>%
     stats::na.omit()
 

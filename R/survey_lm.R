@@ -9,23 +9,29 @@
 #' @return survey_plot Returns a scatterplot of detailing the linear model predicting change in the response variable based on a change in the predictor
 #' @export
 survey_lm <- function(filepath, predictor, response, x_title, y_title){
-
+  #Ensures the survey dataset is downloaded and cleaned
   surveys <- survey_cleaner("/cloud/project/data/surveys.csv")
 
+  #Extract the predictor variable to predict
   predict <- surveys %>%
     dplyr::select({{predictor}}) %>%
     dplyr::pull(tidyselect::all_of({{predictor}}))
 
+  #Extract the response variable to repond
   respond <- surveys %>%
     dplyr::select({{response}}) %>%
     dplyr::pull(tidyselect::all_of({{response}}))
 
+  #Create a linear model predicting the influence of the predictor on the response from the surveys dataset.
   survey_model <- stats::lm(respond ~ predict, data = surveys)
   summary(survey_model)
 
+  #Create a scatterplot of the relationship between the predictor and reponse as well as plotting the trendline and value of r-squared.
   surveys_plot <- ggplot2::ggplot(surveys, aes_string(x = {{predict}}, y = {{respond}})) + geom_point() + geom_jitter() + labs(x = x_title, y = y_title) + geom_smooth(method = "lm", color = "red", fill = "deeppink4") + theme(axis.title.x = element_text(size = 20), axis.title.y = element_text(size = 20)  , axis.text.x = element_text(size = 20), axis.text.y = element_text(size = 20)) + annotate("text", x = 40, y = 90, label = paste("R^2 == ", summary(survey_model)$r.squared), parse=T, size=2)
 
+  #Save the plot created to "surveys_lm_plot.png"
   ggplot2::ggsave("surveys_lm_plot.png", surveys_plot)
+
   return(summary(survey_model))
 
 }

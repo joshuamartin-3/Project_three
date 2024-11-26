@@ -17,3 +17,26 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(AnalyzeSurveys)
 ```
+
+
+##Installion Instructions
+
+devtools::install_github("joshua.martin-3/Project_three/AnalyzeSurveys")
+library(AnalyzeSurveys)
+
+##Introducing the survey_cleaner R function.
+
+This function was created in order to ensure that the surveys.csv dataset is located in the proper directory on the local machine. The secondary usage of this function is to ensure that the common types of NA values located within the dataset are removed providing a "clean" dataset for usage.
+
+##Usage of the function to download the surveys dataset.
+
+The data utilized in this package is located within the surveys.csv dataset.
+
+This can be downloaded directly to the directory "/cloud/project/data/surveys.csv" using the code displayed below.
+
+AnalyzeSurveys::survey_cleaner("/cloud/project/data/surveys.csv")
+
+The code displayed above checks for the presence of the proper file in the specified filepath. If it is not there it will then download the file to the specified location. The function read_csv was used in order to save the csv file to a variable name and specify commmon NA values. Lastly, the NA values were removed from the dataset and a "clean" version of the surveys dataset was returned from the function.
+
+
+

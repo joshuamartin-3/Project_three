@@ -10,8 +10,10 @@
 #' @export
 
 survey_dotplot <- function(filepath, x_var, y_var, x_title, y_title){
+  #Cleaned surveys dataset assigned to the variable dataframe.
   dataframe <- survey_cleaner(filepath)
 
+  #ggplot function used to create a custom scatterplot template using specified variables and titles for the x-axis and y-axis.
   survey_plot <- ggplot2::ggplot(data = dataframe, mapping = aes_string(x = x_var, y = y_var)) + geom_point() + labs(x = x_title, y = y_title) + theme(legend.position = "right")
 
   return(survey_plot)

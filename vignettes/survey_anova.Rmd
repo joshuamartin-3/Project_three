@@ -17,3 +17,35 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(AnalyzeSurveys)
 ```
+
+##Installion Instructions
+
+devtools::install_github("joshua.martin-3/Project_three/AnalyzeSurveys")
+library(AnalyzeSurveys)
+
+##Introducing the survey_lm R function.
+
+This function was created in order to perform an ANOVA analysis of the relationship between two specified variable types. This function will return to the console a summary of the ANOVA test, and saved locally will be the graphical representation of the linear model.
+
+##Where to get the data.
+
+The data utilized in this package is located within the surveys.csv dataset.
+
+This can be downloaded directly to the directory "/cloud/project/data/surveys.csv" using the code displayed below.
+
+AnalyzeSurveys::survey_cleaner("/cloud/project/data/surveys.csv")
+
+##Sample Utilization of the survey_anova function
+
+There are five parameters used in this function:
+
+filepath the path to the surveys.csv dataset
+predictor the variable potentially impacting the reponse variable
+response the variable potentially changed by the predictor variable
+x_title the user-specified x-axis title
+y_title the user-specified y-axis title
+
+AnalyzeSurveys::survey_anova("/cloud/project/data/surveys.csv", "weight", "hindfoot_length", "Weight", "Hindfoot Length")
+
+The function will summarize the relationship of weight on hindfoot_length using a linear model, then the aov function was used to fit an analysis of variance model to the dataset. Next the function creates a graphical representation of the potential effect of weight on hindfoot_length as a scatterplot with the linear model trendline and r-squared. Lastly, the function will save the graph to a file named "anova_plot.png".
+

@@ -92,6 +92,34 @@ Columns</h1>
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">AnalyzeSurveys</span><span class="op">)</span></span></code></pre></div>
+<p>##Installion Instructions</p>
+<p>devtools::install_github(“joshua.martin-3/Project_three/AnalyzeSurveys”)
+library(AnalyzeSurveys)</p>
+<p>##Introducing the survey_dotplot R function.</p>
+<p>This function was created in order to create a custom scatterplot
+from the surveys.csv dataset comparing to variable types and adding
+user-defined axis titles.</p>
+<p>##Usage of the function to download the surveys dataset.</p>
+<p>The data utilized in this package is located within the surveys.csv
+dataset.</p>
+<p>This can be downloaded directly to the directory
+“/cloud/project/data/surveys.csv” using the code displayed below.</p>
+<p>AnalyzeSurveys::survey_cleaner(“/cloud/project/data/surveys.csv”)</p>
+<p>The code displayed above checks for the presence of the proper file
+in the specified filepath. If it is not there it will then download the
+file to the specified location. The function read_csv was used in order
+to save the csv file to a variable name and specify commmon NA values.
+Lastly, the NA values were removed from the dataset and a “clean”
+version of the surveys dataset was returned from the function.</p>
+<p>##Sample usage of survey_dotplot</p>
+<p>There are five parameters needed for this function: filepath path of
+the saved surveys.csv file x_var name of the x-axis variable y_var name
+of the y-axis variable x_title specified x-axis title y_title specified
+y-axis title</p>
+<p>AnalyzeSurveys::survey_dotplot(“/cloud/project/data/surveys.csv”,
+“weight”, “hindfoot_length”, “Weight”, “Hindfoot Length”)</p>
+<p>The output of this function will return the scatterplot comparing the
+relationship between hindfoot_length and height.</p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

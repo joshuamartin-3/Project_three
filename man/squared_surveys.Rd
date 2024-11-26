@@ -12,7 +12,7 @@ squared_surveys(filepath, clmns)
 \item{clmns}{The column of values you wish to get squared values for}
 }
 \value{
-sqrd the original dataset with a new column of squared values.
+sqrd the squared values of the original column.
 }
 \description{
 Takes in a csv database and squares the values of a numeric column specified
