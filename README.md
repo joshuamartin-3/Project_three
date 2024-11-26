@@ -37,11 +37,31 @@ Once this segment of code is ran a pre-existing template within the function wil
 ## Functions within the package
 
 + survey_cleaner ensures the surveys.csv dataset is in the proper directory("cloud/project/data/surveys.csv") and cleans it of common NA values.
+```
+#Sample syntax
+AnalyzeSurveys::survey_cleaner("/cloud/project/data/surveys.csv")
+```
 
 + survey_dotplot cleans and creates a scatterplot comparing two user-specified variables
+```
+#Sample syntax
+AnalyzeSurveys::survey_dotplot("/cloud/project/data/surveys.csv", "weight", "hindfoot_length", "Weight", "Hindfoot Length")
+```
 
 + squared_surveys omits NA values and squares the value of the user-specified column
+```
+#Sample syntax
+AnalyzeSurveys::squared_surveys("/cloud/project/data/surveys.csv", "weight")
+```
 
 + survey_lm creates a linear model of comparing a user-specified predictor and response variable and saves a graphical representation of the model for use in error-checking
+```
+#Sample syntax
+AnalyzeSurveys::survey_lm("/cloud/project/data/surveys.csv", "weight", "hindfoot_length", "Weight", "Hindfoot Length")
+```
 
 + survey_anova creates a linear model, fits an ANOVA model, and saves a graphical representation of the model for error checking purposes.
+```
+#Sample syntax
+AnalyzeSurveys::survey_anova("/cloud/project/data/surveys.csv", "weight", "hindfoot_length", "Weight", "Hindfoot Length")
+```
