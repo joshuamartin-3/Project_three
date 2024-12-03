@@ -23,7 +23,7 @@ library(AnalyzeSurveys)
 devtools::install_github("joshuamartin-3/Project_three")
 library(AnalyzeSurveys)
 
-## Introducing the survey_lm R function.
+## Introducing the survey_anova R function.
 
 This function was created in order to perform an ANOVA analysis of the relationship between two specified variable types. This function will return to the console a summary of the ANOVA test, and saved locally will be the graphical representation of the linear model.
 

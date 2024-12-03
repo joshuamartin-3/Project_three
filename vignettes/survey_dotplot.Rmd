@@ -28,7 +28,7 @@ library(AnalyzeSurveys)
 
 ## Introducing the survey_dotplot R function.
 
-This function was created in order to create a custom scatterplot from the surveys.csv dataset comparing to variable types and adding user-defined axis titles. 
+This function was created in order to create a custom scatterplot from the surveys.csv dataset comparing two variable types and adding user-defined axis titles. 
 
 ## Usage of the function to download the surveys dataset.
 
