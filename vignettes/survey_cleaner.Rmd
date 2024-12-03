@@ -43,4 +43,3 @@ AnalyzeSurveys::survey_cleaner("/cloud/project/data/surveys.csv")
 The code displayed above checks for the presence of the proper file in the specified filepath. If it is not there it will then download the file to the specified location. The function read_csv was used in order to save the csv file to a variable name and specify commmon NA values. Lastly, the NA values were removed from the dataset and a "clean" version of the surveys dataset was returned from the function.
 
 
-

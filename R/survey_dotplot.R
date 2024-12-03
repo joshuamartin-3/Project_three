@@ -10,7 +10,7 @@
 #' @param x_title User-specified title for x-axis of plot
 #' @param y_title User-specified title for y-axis of plot
 #'
-#' @return survey_plot the scatterplot using the surveys dataset comparing two variables x_var and y_var, grouping the two variables by color_group
+#' @return survey_plot the scatterplot using the surveys dataset comparing two variables x_var and y_var
 #' @export
 
 survey_dotplot <- function(filepath, x_var, y_var, x_title, y_title){

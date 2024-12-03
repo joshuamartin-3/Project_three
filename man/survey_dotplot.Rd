@@ -18,7 +18,7 @@ survey_dotplot(filepath, x_var, y_var, x_title, y_title)
 \item{y_title}{User-specified title for y-axis of plot}
 }
 \value{
-survey_plot the scatterplot using the surveys dataset comparing two variables x_var and y_var, grouping the two variables by color_group
+survey_plot the scatterplot using the surveys dataset comparing two variables x_var and y_var
 }
 \description{
 The function survey_dotplot first takes in the filepath to the surveys dataset and ensures it is clean using the survey_cleaner function and saving the output to a variable dataframe.
